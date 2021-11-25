@@ -1,0 +1,7 @@
+Teste Unitário
+Testar as regras de negocio, nesta aplicação sera testados os casos de uso no usecase.
+
+Teste de integração.
+Testar as rotas e controllers, conexão com o banco de dados e relacionamento do banco.
+-> routes -> controllers -> useCases -> respository -> bancoDeDados
+<- bancoDeDados <- respository <- useCases <- controllers <- routes
