@@ -2,11 +2,12 @@ import { inject, injectable } from "tsyringe";
 
 import { IUsersRepository } from "../../../users/repositories/IUsersRepository";
 import { IStatementsRepository } from "../../repositories/IStatementsRepository";
-import { CreateStatementError } from "./CreateStatementError";
-import { ICreateStatementDTO } from "./ICreateStatementDTO";
+import { CreateStatementError } from "../createStatement/CreateStatementError";
+import { ICreateStatementDTO } from "../createStatement/ICreateStatementDTO";
+
 
 @injectable()
-export class CreateStatementUseCase {
+export class CreateStatementTransferUseCase {
   constructor(
     @inject('UsersRepository')
     private usersRepository: IUsersRepository,
@@ -22,20 +23,22 @@ export class CreateStatementUseCase {
       throw new CreateStatementError.UserNotFound();
     }
 
-    if (type === 'withdraw') {
+
+    if (type === 'transfer') {
       const { balance } = await this.statementsRepository.getUserBalance({ user_id });
 
       if (balance < amount) {
         throw new CreateStatementError.InsufficientFunds()
       }
     }
+    console.log(amount);
 
     const statementOperation = await this.statementsRepository.create({
       user_id,
       sender_id,
-      type,
       amount,
-      description
+      description,
+      type,
     });
 
     return statementOperation;

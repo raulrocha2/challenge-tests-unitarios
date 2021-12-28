@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.68% </span>
+                <span class="strong">27.53% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>35/64</span>
+                <span class='fraction'>19/69</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/4</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54.68% </span>
+                <span class="strong">27.53% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>35/64</span>
+                <span class='fraction'>19/69</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -121,7 +121,12 @@
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -133,24 +138,26 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -159,6 +166,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -196,25 +206,27 @@ import { IStatementsRepository } from "./IStatementsRepository";
 export class StatementsRepository implements IStatementsRepository {
   private repository: Repository&lt;Statement&gt;;
 &nbsp;
-  constructor() {
-    this.repository = getRepository(Statement);
-  }
+<span class="fstat-no" title="function not covered" >  constructor() {</span>
+<span class="cstat-no" title="statement not covered" >    this.repository = getRepository(Statement);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
-  async create({
-    user_id,
-    amount,
-    description,
-    type
-  }: ICreateStatementDTO): Promise&lt;Statement&gt; {
-    const statement = this.repository.create({
-      user_id,
-      amount,
-      description,
-      type
-    });
-&nbsp;
-    return this.repository.save(statement);
-  }
+<span class="fstat-no" title="function not covered" >  async create({</span>
+<span class="cstat-no" title="statement not covered" >    user_id,</span>
+<span class="cstat-no" title="statement not covered" >    sender_id,</span>
+<span class="cstat-no" title="statement not covered" >    amount,</span>
+<span class="cstat-no" title="statement not covered" >    description,</span>
+<span class="cstat-no" title="statement not covered" >    type</span>
+<span class="cstat-no" title="statement not covered" >  }: ICreateStatementDTO): Promise&lt;Statement&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    const statement = this.repository.create({</span>
+<span class="cstat-no" title="statement not covered" >      user_id,</span>
+<span class="cstat-no" title="statement not covered" >      sender_id,</span>
+<span class="cstat-no" title="statement not covered" >      amount,</span>
+<span class="cstat-no" title="statement not covered" >      description,</span>
+<span class="cstat-no" title="statement not covered" >      type</span>
+<span class="cstat-no" title="statement not covered" >    });</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    return this.repository.save(statement);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >  async findStatementOperation({ statement_id, user_id }: IGetStatementOperationDTO): Promise&lt;Statement | undefined&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    return this.repository.findOne(statement_id, {</span>
@@ -225,17 +237,20 @@ export class StatementsRepository implements IStatementsRepository {
 <span class="fstat-no" title="function not covered" >  async getUserBalance({ user_id, with_statement = false }: IGetBalanceDTO):</span>
 <span class="cstat-no" title="statement not covered" >    Promise&lt;</span>
 <span class="cstat-no" title="statement not covered" >      { balance: number } | { balance: number, statement: Statement[] }</span>
-<span class="cstat-no" title="statement not covered" >    &gt;</span>
-<span class="cstat-no" title="statement not covered" >  {</span>
+<span class="cstat-no" title="statement not covered" >    &gt; {</span>
 <span class="cstat-no" title="statement not covered" >    const statement = await this.repository.find({</span>
 <span class="cstat-no" title="statement not covered" >      where: { user_id }</span>
 <span class="cstat-no" title="statement not covered" >    });</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const balance = statement.reduce((acc, operation) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      if (operation.type === 'deposit') {</span>
-<span class="cstat-no" title="statement not covered" >        return acc + operation.amount;</span>
+<span class="cstat-no" title="statement not covered" >        return acc + Number(operation.amount);</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >      } else if (operation.type === 'transfer') {</span>
+<span class="cstat-no" title="statement not covered" >        return acc + Number(operation.amount);</span>
+<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >      } else {</span>
-<span class="cstat-no" title="statement not covered" >        return acc - operation.amount;</span>
+<span class="cstat-no" title="statement not covered" >        return acc - Number(operation.amount);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
 <span class="cstat-no" title="statement not covered" >    }, 0)</span>
 <span class="cstat-no" title="statement not covered" ></span>
@@ -256,7 +271,7 @@ export class StatementsRepository implements IStatementsRepository {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat Nov 27 2021 19:21:38 GMT-0300 (Brasilia Standard Time)
+                at Mon Dec 27 2021 18:07:09 GMT-0300 (Brasilia Standard Time)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>
