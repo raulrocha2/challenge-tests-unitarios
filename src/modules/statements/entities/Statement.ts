@@ -10,7 +10,7 @@ import {
 import { v4 as uuid } from 'uuid';
 
 import { User } from '../../users/entities/User';
-import { Balance } from './Balance';
+
 
 enum OperationType {
   DEPOSIT = 'deposit',
@@ -23,6 +23,13 @@ export class Statement {
   @PrimaryGeneratedColumn('uuid')
   id?: string;
 
+
+  @Column('uuid')
+  sender_id: string;
+
+  @ManyToOne(() => User)
+  @JoinColumn({ name: 'sender_id' })
+
   @Column('uuid')
   user_id: string;
 
@@ -30,21 +37,11 @@ export class Statement {
   @JoinColumn({ name: 'user_id' })
   user: User;
 
-  @Column('uuid')
-  sender_id: string;
-
-  @ManyToOne(() => User, user => user.statement)
-  @JoinColumn({ name: 'sender_id' })
-
   @Column()
   description: string;
 
   @Column('decimal', { precision: 5, scale: 2 })
   amount: number;
-
-  @OneToOne(() => Balance, balance => balance.statement)
-  balance: Balance[];
-
 
   @Column({ type: 'enum', enum: OperationType })
   type: OperationType;

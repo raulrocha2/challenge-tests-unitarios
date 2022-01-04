@@ -18,17 +18,13 @@ export class CreateStatementTrasferController {
     const splittedPath = request.originalUrl.split('/')
     const type = splittedPath[splittedPath.length - 2] as OperationType;
 
-    console.log(sender_id);
-    console.log(type);
-
-
     const createTransferStatement = container.resolve(CreateStatementTransferUseCase);
 
     const statement = await createTransferStatement.execute({
-      user_id,
-      sender_id,
+      user_id: sender_id,
+      sender_id: user_id,
       type,
-      amount,
+      amount: amount * -1,
       description
     });
 
