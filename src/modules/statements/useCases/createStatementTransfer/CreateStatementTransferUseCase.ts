@@ -1,9 +1,11 @@
 import { inject, injectable } from "tsyringe";
 
 import { IUsersRepository } from "../../../users/repositories/IUsersRepository";
+import { OperationType } from "../../entities/Statement";
 import { IStatementsRepository } from "../../repositories/IStatementsRepository";
 import { CreateStatementError } from "../createStatement/CreateStatementError";
 import { ICreateStatementDTO } from "../createStatement/ICreateStatementDTO";
+
 
 
 @injectable()
@@ -16,28 +18,47 @@ export class CreateStatementTransferUseCase {
     private statementsRepository: IStatementsRepository
   ) { }
 
-  async execute({ user_id, sender_id, type, amount, description }: ICreateStatementDTO) {
-    const user = await this.usersRepository.findById(user_id);
+  async execute({
+    user_id,
+    sender_id,
+    type,
+    amount,
+    description }: ICreateStatementDTO) {
 
-    if (!user) {
+
+    const senderUser = await this.usersRepository.findById(sender_id);
+
+    if (!senderUser) {
       throw new CreateStatementError.UserNotFound();
     }
 
-    if (type === 'transfer') {
-      const { balance } = await this.statementsRepository.getUserBalance({ user_id: sender_id });
-      console.log(balance);
+    const receiveUser = await this.usersRepository.findById(user_id);
 
-      if (balance < amount) {
-        throw new CreateStatementError.InsufficientFunds()
-      }
+    if (!receiveUser) {
+      throw new CreateStatementError.UserNotFound();
     }
 
+    const { balance } = await this.statementsRepository.getUserBalance({ user_id: sender_id });
+
+    if (balance < amount) {
+      throw new CreateStatementError.InsufficientFunds()
+    }
+
+
+    await this.statementsRepository.create({
+      amount,
+      description,
+      type: OperationType.WITHDRAW,
+      user_id: senderUser.id as string,
+      sender_id: senderUser.id as string
+    });
+
     const statementOperation = await this.statementsRepository.create({
-      user_id,
-      sender_id,
       amount,
       description,
       type,
+      user_id: receiveUser.id as string,
+      sender_id: senderUser.id as string
     });
 
     return statementOperation;

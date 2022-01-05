@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">37.83% </span>
+                <span class="strong">34.48% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14/37</span>
+                <span class='fraction'>10/29</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">37.83% </span>
+                <span class="strong">34.48% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14/37</span>
+                <span class='fraction'>10/29</span>
             </div>
         
             
@@ -86,27 +86,15 @@
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L30'></a><a href='#L30'>30</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -126,40 +114,28 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Request, Response } from 'express';
 import { container } from 'tsyringe';
+import { OperationType } from '../../entities/Statement';
 &nbsp;
 import { CreateStatementTransferUseCase } from './CreateStatementTransferUseCase';
 &nbsp;
-enum OperationType {
-  DEPOSIT = 'deposit',
-  WITHDRAW = 'withdraw',
-  TRANSFER = 'transfer',
-}
 &nbsp;
 export class CreateStatementTrasferController {
 <span class="fstat-no" title="function not covered" >  async execute(request: Request, response: Response) {</span>
-<span class="cstat-no" title="statement not covered" >    const { id: user_id } = request.user;</span>
+<span class="cstat-no" title="statement not covered" >    const { id: sender_user_id } = request.user;</span>
 <span class="cstat-no" title="statement not covered" >    const { amount, description } = request.body;</span>
-<span class="cstat-no" title="statement not covered" >    const { sender_id } = request.params;</span>
+<span class="cstat-no" title="statement not covered" >    const { user_id: receive_user_id } = request.params;</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const splittedPath = request.originalUrl.split('/')</span>
 <span class="cstat-no" title="statement not covered" >    const type = splittedPath[splittedPath.length - 2] as OperationType;</span>
 <span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >    console.log(sender_id);</span>
-<span class="cstat-no" title="statement not covered" >    console.log(type);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const createTransferStatement = container.resolve(CreateStatementTransferUseCase);</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const statement = await createTransferStatement.execute({</span>
-<span class="cstat-no" title="statement not covered" >      user_id,</span>
-<span class="cstat-no" title="statement not covered" >      sender_id,</span>
+<span class="cstat-no" title="statement not covered" >      sender_user_id,</span>
+<span class="cstat-no" title="statement not covered" >      receive_user_id,</span>
 <span class="cstat-no" title="statement not covered" >      type,</span>
 <span class="cstat-no" title="statement not covered" >      amount,</span>
 <span class="cstat-no" title="statement not covered" >      description</span>
@@ -175,7 +151,7 @@ export class CreateStatementTrasferController {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Dec 28 2021 16:46:18 GMT-0300 (Brasilia Standard Time)
+                at Wed Jan 05 2022 14:17:29 GMT-0300 (Brasilia Standard Time)
             </div>
         </div>
         <script src="../../../../../prettify.js"></script>

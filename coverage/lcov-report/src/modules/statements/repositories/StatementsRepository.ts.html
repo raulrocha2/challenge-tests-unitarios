@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">27.53% </span>
+                <span class="strong">30.64% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>19/69</span>
+                <span class='fraction'>19/62</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">27.53% </span>
+                <span class="strong">30.64% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>19/69</span>
+                <span class='fraction'>19/62</span>
             </div>
         
             
@@ -119,14 +119,7 @@
 <a name='L60'></a><a href='#L60'>60</a>
 <a name='L61'></a><a href='#L61'>61</a>
 <a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L63'></a><a href='#L63'>63</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -134,16 +127,14 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -158,15 +149,14 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -190,11 +180,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { getRepository, Repository } from "typeorm";
 &nbsp;
 import { Statement } from "../entities/Statement";
@@ -212,14 +198,12 @@ export class StatementsRepository implements IStatementsRepository {
 &nbsp;
 <span class="fstat-no" title="function not covered" >  async create({</span>
 <span class="cstat-no" title="statement not covered" >    user_id,</span>
-<span class="cstat-no" title="statement not covered" >    sender_id,</span>
 <span class="cstat-no" title="statement not covered" >    amount,</span>
 <span class="cstat-no" title="statement not covered" >    description,</span>
 <span class="cstat-no" title="statement not covered" >    type</span>
 <span class="cstat-no" title="statement not covered" >  }: ICreateStatementDTO): Promise&lt;Statement&gt; {</span>
 <span class="cstat-no" title="statement not covered" >    const statement = this.repository.create({</span>
 <span class="cstat-no" title="statement not covered" >      user_id,</span>
-<span class="cstat-no" title="statement not covered" >      sender_id,</span>
 <span class="cstat-no" title="statement not covered" >      amount,</span>
 <span class="cstat-no" title="statement not covered" >      description,</span>
 <span class="cstat-no" title="statement not covered" >      type</span>
@@ -243,16 +227,11 @@ export class StatementsRepository implements IStatementsRepository {
 <span class="cstat-no" title="statement not covered" >    });</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const balance = statement.reduce((acc, operation) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      if (operation.type === 'deposit') {</span>
+<span class="cstat-no" title="statement not covered" >      if (operation.type === 'deposit' || operation.type === 'transfer') {</span>
 <span class="cstat-no" title="statement not covered" >        return acc + Number(operation.amount);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >      } else if (operation.type === 'transfer') {</span>
-<span class="cstat-no" title="statement not covered" >        return acc + Number(operation.amount);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >      } else {</span>
-<span class="cstat-no" title="statement not covered" >        return acc - Number(operation.amount);</span>
 <span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >    }, 0)</span>
+<span class="cstat-no" title="statement not covered" >      return acc - Number(operation.amount);</span>
+<span class="cstat-no" title="statement not covered" >    }, 0);</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    if (with_statement) {</span>
 <span class="cstat-no" title="statement not covered" >      return {</span>
@@ -271,7 +250,7 @@ export class StatementsRepository implements IStatementsRepository {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Dec 28 2021 16:46:18 GMT-0300 (Brasilia Standard Time)
+                at Wed Jan 05 2022 14:17:29 GMT-0300 (Brasilia Standard Time)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>

@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.85% </span>
+                <span class="strong">11.47% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>9/70</span>
+                <span class='fraction'>7/61</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">12.85% </span>
+                <span class="strong">11.47% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9/70</span>
+                <span class='fraction'>7/61</span>
             </div>
         
             
@@ -117,21 +117,10 @@
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
 <a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L61'></a><a href='#L61'>61</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -184,97 +173,78 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { MigrationInterface, QueryRunner, Table } from "typeorm";
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { MigrationInterface, QueryRunner, Table } from "typeorm";
 &nbsp;
 export class accountsTable1616682561481 implements MigrationInterface {
-&nbsp;
 <span class="fstat-no" title="function not covered" >  public async up(queryRunner: QueryRunner): Promise&lt;void&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    await queryRunner.createTable(new Table({</span>
-<span class="cstat-no" title="statement not covered" >      name: 'statements',</span>
-<span class="cstat-no" title="statement not covered" >      columns: [</span>
-<span class="cstat-no" title="statement not covered" >        {</span>
-<span class="cstat-no" title="statement not covered" >          name: 'id',</span>
-<span class="cstat-no" title="statement not covered" >          type: 'uuid',</span>
-<span class="cstat-no" title="statement not covered" >          isPrimary: true,</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
-<span class="cstat-no" title="statement not covered" >        {</span>
-<span class="cstat-no" title="statement not covered" >          name: 'user_id',</span>
-<span class="cstat-no" title="statement not covered" >          type: 'uuid',</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
-<span class="cstat-no" title="statement not covered" >        {</span>
-<span class="cstat-no" title="statement not covered" >          name: "sender_id",</span>
-<span class="cstat-no" title="statement not covered" >          type: "uuid",</span>
-<span class="cstat-no" title="statement not covered" >          isNullable: true,</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
-<span class="cstat-no" title="statement not covered" >        {</span>
-<span class="cstat-no" title="statement not covered" >          name: 'description',</span>
-<span class="cstat-no" title="statement not covered" >          type: 'varchar',</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
-<span class="cstat-no" title="statement not covered" >        {</span>
-<span class="cstat-no" title="statement not covered" >          name: 'amount',</span>
-<span class="cstat-no" title="statement not covered" >          type: 'decimal',</span>
-<span class="cstat-no" title="statement not covered" >          precision: 5,</span>
-<span class="cstat-no" title="statement not covered" >          scale: 2,</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
-<span class="cstat-no" title="statement not covered" >        {</span>
-<span class="cstat-no" title="statement not covered" >          name: 'type',</span>
-<span class="cstat-no" title="statement not covered" >          type: 'enum',</span>
-<span class="cstat-no" title="statement not covered" >          enum: [</span>
-<span class="cstat-no" title="statement not covered" >            'deposit',</span>
-<span class="cstat-no" title="statement not covered" >            'withdraw',</span>
-<span class="cstat-no" title="statement not covered" >            'transfer'</span>
-<span class="cstat-no" title="statement not covered" >          ]</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
-<span class="cstat-no" title="statement not covered" >        {</span>
-<span class="cstat-no" title="statement not covered" >          name: 'created_at',</span>
-<span class="cstat-no" title="statement not covered" >          type: 'timestamp',</span>
-<span class="cstat-no" title="statement not covered" >          default: 'now()'</span>
-<span class="cstat-no" title="statement not covered" >        },</span>
-<span class="cstat-no" title="statement not covered" >        {</span>
-<span class="cstat-no" title="statement not covered" >          name: 'updated_at',</span>
-<span class="cstat-no" title="statement not covered" >          type: 'timestamp',</span>
-<span class="cstat-no" title="statement not covered" >          default: 'now()'</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >      ],</span>
-<span class="cstat-no" title="statement not covered" >      foreignKeys: [</span>
-<span class="cstat-no" title="statement not covered" >        {</span>
-<span class="cstat-no" title="statement not covered" >          name: 'statements',</span>
-<span class="cstat-no" title="statement not covered" >          columnNames: ['user_id'],</span>
-<span class="cstat-no" title="statement not covered" >          referencedTableName: 'users',</span>
-<span class="cstat-no" title="statement not covered" >          referencedColumnNames: ['id'],</span>
-<span class="cstat-no" title="statement not covered" >          onUpdate: 'CASCADE',</span>
-<span class="cstat-no" title="statement not covered" >          onDelete: 'CASCADE'</span>
-<span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >      ]</span>
-<span class="cstat-no" title="statement not covered" >    }))</span>
+<span class="cstat-no" title="statement not covered" >    await queryRunner.createTable(</span>
+<span class="cstat-no" title="statement not covered" >      new Table({</span>
+<span class="cstat-no" title="statement not covered" >        name: "statements",</span>
+<span class="cstat-no" title="statement not covered" >        columns: [</span>
+<span class="cstat-no" title="statement not covered" >          {</span>
+<span class="cstat-no" title="statement not covered" >            name: "id",</span>
+<span class="cstat-no" title="statement not covered" >            type: "uuid",</span>
+<span class="cstat-no" title="statement not covered" >            isPrimary: true,</span>
+<span class="cstat-no" title="statement not covered" >          },</span>
+<span class="cstat-no" title="statement not covered" >          {</span>
+<span class="cstat-no" title="statement not covered" >            name: "user_id",</span>
+<span class="cstat-no" title="statement not covered" >            type: "uuid",</span>
+<span class="cstat-no" title="statement not covered" >          },</span>
+<span class="cstat-no" title="statement not covered" >          {</span>
+<span class="cstat-no" title="statement not covered" >            name: "description",</span>
+<span class="cstat-no" title="statement not covered" >            type: "varchar",</span>
+<span class="cstat-no" title="statement not covered" >          },</span>
+<span class="cstat-no" title="statement not covered" >          {</span>
+<span class="cstat-no" title="statement not covered" >            name: "amount",</span>
+<span class="cstat-no" title="statement not covered" >            type: "decimal",</span>
+<span class="cstat-no" title="statement not covered" >            precision: 5,</span>
+<span class="cstat-no" title="statement not covered" >            scale: 2,</span>
+<span class="cstat-no" title="statement not covered" >          },</span>
+<span class="cstat-no" title="statement not covered" >          {</span>
+<span class="cstat-no" title="statement not covered" >            name: "type",</span>
+<span class="cstat-no" title="statement not covered" >            type: "enum",</span>
+<span class="cstat-no" title="statement not covered" >            enum: ["deposit", "withdraw", "transfer"],</span>
+<span class="cstat-no" title="statement not covered" >          },</span>
+<span class="cstat-no" title="statement not covered" >          {</span>
+<span class="cstat-no" title="statement not covered" >            name: "created_at",</span>
+<span class="cstat-no" title="statement not covered" >            type: "timestamp",</span>
+<span class="cstat-no" title="statement not covered" >            default: "now()",</span>
+<span class="cstat-no" title="statement not covered" >          },</span>
+<span class="cstat-no" title="statement not covered" >          {</span>
+<span class="cstat-no" title="statement not covered" >            name: "updated_at",</span>
+<span class="cstat-no" title="statement not covered" >            type: "timestamp",</span>
+<span class="cstat-no" title="statement not covered" >            default: "now()",</span>
+<span class="cstat-no" title="statement not covered" >          },</span>
+<span class="cstat-no" title="statement not covered" >        ],</span>
+<span class="cstat-no" title="statement not covered" >        foreignKeys: [</span>
+<span class="cstat-no" title="statement not covered" >          {</span>
+<span class="cstat-no" title="statement not covered" >            name: "statements",</span>
+<span class="cstat-no" title="statement not covered" >            columnNames: ["user_id"],</span>
+<span class="cstat-no" title="statement not covered" >            referencedTableName: "users",</span>
+<span class="cstat-no" title="statement not covered" >            referencedColumnNames: ["id"],</span>
+<span class="cstat-no" title="statement not covered" >            onUpdate: "CASCADE",</span>
+<span class="cstat-no" title="statement not covered" >            onDelete: "CASCADE",</span>
+<span class="cstat-no" title="statement not covered" >          },</span>
+<span class="cstat-no" title="statement not covered" >        ],</span>
+<span class="cstat-no" title="statement not covered" >      })</span>
+<span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
 &nbsp;
 <span class="fstat-no" title="function not covered" >  public async down(queryRunner: QueryRunner): Promise&lt;void&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    await queryRunner.dropTable('statements');</span>
+<span class="cstat-no" title="statement not covered" >    await queryRunner.dropTable("statements");</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-&nbsp;
-}
-&nbsp;</pre></td></tr></table></pre>
+}</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Dec 28 2021 16:46:18 GMT-0300 (Brasilia Standard Time)
+                at Wed Jan 05 2022 14:17:29 GMT-0300 (Brasilia Standard Time)
             </div>
         </div>
         <script src="../../../prettify.js"></script>
