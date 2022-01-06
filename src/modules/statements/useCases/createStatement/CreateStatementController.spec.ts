@@ -19,7 +19,7 @@ describe("Create a Statement Controller", () => {
 
     await connection.query(
       ` INSERT INTO USERS(id, name, email, password, created_at, updated_at)
-      VALUES('${id}', 'admin', 'admin@finapi.com', '${password}', 'now()', 'now()')
+      VALUES('${id}', 'statement', 'statement@finapi.com', '${password}', 'now()', 'now()')
       `
     );
   });
@@ -34,7 +34,7 @@ describe("Create a Statement Controller", () => {
     const responseToken = await request(app)
       .post("/api/v1/sessions")
       .send({
-        email: "admin@finapi.com",
+        email: "statement@finapi.com",
         password: "admin_fin_api"
       });
 
@@ -60,7 +60,7 @@ describe("Create a Statement Controller", () => {
     const responseToken = await request(app)
       .post("/api/v1/sessions")
       .send({
-        email: "admin@finapi.com",
+        email: "statement@finapi.com",
         password: "admin_fin_api"
       });
 
@@ -86,7 +86,7 @@ describe("Create a Statement Controller", () => {
     const responseToken = await request(app)
       .post("/api/v1/sessions")
       .send({
-        email: "admin@finapi.com",
+        email: "statement@finapi.com",
         password: "admin_fin_api"
       });
 

@@ -4,12 +4,13 @@ import { IUsersRepository } from "../../../users/repositories/IUsersRepository";
 import { OperationType } from "../../entities/Statement";
 import { IStatementsRepository } from "../../repositories/IStatementsRepository";
 import { CreateStatementError } from "../createStatement/CreateStatementError";
-import { ICreateStatementDTO } from "../createStatement/ICreateStatementDTO";
+import { ICreateTrasferStatementDTO } from "./ICreateTrasferStatementDTO";
+
 
 
 
 @injectable()
-export class CreateStatementTransferUseCase {
+export class CreateTransferStatementUseCase {
   constructor(
     @inject('UsersRepository')
     private usersRepository: IUsersRepository,
@@ -23,7 +24,7 @@ export class CreateStatementTransferUseCase {
     sender_id,
     type,
     amount,
-    description }: ICreateStatementDTO) {
+    description }: ICreateTrasferStatementDTO) {
 
 
     const senderUser = await this.usersRepository.findById(sender_id);
@@ -49,11 +50,10 @@ export class CreateStatementTransferUseCase {
       amount,
       description,
       type: OperationType.WITHDRAW,
-      user_id: senderUser.id as string,
-      sender_id: senderUser.id as string
+      user_id: senderUser.id as string
     });
 
-    const statementOperation = await this.statementsRepository.create({
+    const statementOperation = await this.statementsRepository.createTrasfer({
       amount,
       description,
       type,

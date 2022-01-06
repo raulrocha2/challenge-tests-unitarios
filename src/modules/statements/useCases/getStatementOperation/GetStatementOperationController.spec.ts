@@ -19,7 +19,7 @@ describe("Get a Statement Operation Controller", () => {
 
     await connection.query(
       ` INSERT INTO USERS(id, name, email, password, created_at, updated_at)
-      VALUES('${id}', 'admin', 'admin@finapi.com', '${password}', 'now()', 'now()')
+      VALUES('${id}', 'getstatement', 'getstatement@finapi.com', '${password}', 'now()', 'now()')
       `
     );
   });
@@ -34,7 +34,7 @@ describe("Get a Statement Operation Controller", () => {
     const responseToken = await request(app)
       .post("/api/v1/sessions")
       .send({
-        email: "admin@finapi.com",
+        email: "getstatement@finapi.com",
         password: "admin_fin_api"
       });
 
